@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ESNext",
     "lib": [
       "ESNext",
       "DOM",
+      "ES2020",
       "DOM.Iterable"
     ],
     "module": "ESNext",
@@ -17,5 +18,10 @@
     "declaration": true,
     "outDir": "./dist",
     "baseUrl": "./src",
+    "paths": {
+      "~/*": [
+        "*"
+      ]
+    }
   }
 }
