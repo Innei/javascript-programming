@@ -86,7 +86,7 @@ describe('test impl new', () => {
 describe('test impl call', () => {
   it('call funcion with non-params', () => {
     const res = call(
-      function a() {
+      function a(this: any) {
         return this.a
       },
       { a: 1 },
