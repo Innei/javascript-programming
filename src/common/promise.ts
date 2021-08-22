@@ -21,3 +21,27 @@ export class MyPromise<T> implements Promise<T> {
     })
   }
 }
+
+async function asyncPool(
+  poolLimit: number,
+  array: any[],
+  iteratorFn: Function,
+) {
+  const ret = []
+  const executing: Promise<unknown>[] = []
+  for (const item of array) {
+    const p = Promise.resolve().then(() => iteratorFn(item, array))
+    ret.push(p)
+
+    if (poolLimit <= array.length) {
+      const e = p.then(() =>
+        executing.splice(executing.indexOf(e), 1),
+      ) as Promise<unknown>
+      executing.push(e)
+      if (executing.length >= poolLimit) {
+        await Promise.race(executing)
+      }
+    }
+  }
+  return Promise.all(ret)
+}
