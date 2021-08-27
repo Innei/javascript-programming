@@ -1,4 +1,4 @@
-class EventEmitter<T extends string> {
+export class EventEmitter<T extends string> {
   #onceSymbol = Symbol()
   eventMap = {} as Record<T, Function[]>
 
