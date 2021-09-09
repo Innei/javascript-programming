@@ -10,7 +10,7 @@ specifiers:
   esbuild: 0.12.23
   gh-pages: 3.2.3
   jest: 27.1.0
-  reflect-metadata: ^0.1.13
+  reflect-metadata: 0.1.13
   rollup: 2.56.3
   rollup-plugin-dts: 3.0.2
   rollup-plugin-peer-deps-external: 2.2.4
