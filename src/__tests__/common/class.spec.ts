@@ -1,4 +1,4 @@
-import { call, instanceOf$, new$ } from '~/common'
+import { call, instanceOf$, new$ } from '~/common/class'
 
 describe('test impl instance of', () => {
   it('instance of String', () => {
